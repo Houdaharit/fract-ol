@@ -6,7 +6,7 @@
 /*   By: hharit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:25:24 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/17 02:20:35 by hharit           ###   ########.fr       */
+/*   Updated: 2022/04/03 00:44:50 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ void	julia(t_fractol *fr)
 		{
 			calcul_julia(fr);
 			fr->color = colors()[fr->iteration % 16];
+			//fr->color = fr->iteration * 5 * 255 / fr->max_iter;
 			if (fr->iteration < fr->max_iter)
 				my_mlx_pixel_put(fr, fr->col, fr->row, fr->color);
 			else
-				my_mlx_pixel_put(fr, fr->col, fr->row, 0x000000);
+				my_mlx_pixel_put(fr, fr->col, fr->row, 0xFFFFFF);
 			fr->col++;
 		}
 		fr->row++;

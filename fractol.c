@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hharit <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hharit <hharit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:47:21 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/17 02:10:32 by hharit           ###   ########.fr       */
+/*   Updated: 2022/03/19 03:45:08 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	init_j(t_fractol *fr, char **argv)
 	{
 		fr->c_re_j = 0.285;
 		fr->c_im_j = 0.0;
-		return ;
 	}
 	else if (!ft_strcmp(argv[2], "0.285") && !ft_strcmp(argv[3], "0.01"))
 	{
@@ -29,9 +28,9 @@ void	init_j(t_fractol *fr, char **argv)
 	{
 		fr->c_re_j = 0.45;
 		fr->c_im_j = 0.1428;
-		return ;
 	}
-	message_j();
+	else
+		message_j();
 }
 
 void	draw_set(t_fractol *fr)

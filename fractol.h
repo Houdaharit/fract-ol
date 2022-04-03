@@ -6,7 +6,7 @@
 /*   By: hharit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:57:53 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/17 02:25:16 by hharit           ###   ########.fr       */
+/*   Updated: 2022/03/19 04:44:18 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	b_ship_calcul(t_fractol *fr);
 void	b_ship_set(t_fractol *fr);
 void	calcul_julia(t_fractol *fr);
+void	check_args(int argc, char **argv);
+void	check_args_b(int argc, char **argv);
 #endif

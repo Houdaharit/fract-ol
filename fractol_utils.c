@@ -6,7 +6,7 @@
 /*   By: hharit <hharit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:06:21 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/17 02:25:18 by hharit           ###   ########.fr       */
+/*   Updated: 2022/04/03 00:43:53 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	my_mlx_pixel_put(t_fractol *fr, int x, int y, int color)
 int	destroy(t_fractol *fr)
 {
 	mlx_destroy_window(fr->mlx, fr->win);
+	free(fr->mlx);
 	exit(0);
 	return (0);
 }
@@ -30,7 +31,10 @@ int	destroy(t_fractol *fr)
 int	ft_close(int keycode, t_fractol *fr)
 {
 	if (keycode == 53)
+	{
 		destroy(fr);
+		free(fr->win);
+	}
 	return (0);
 }
 

@@ -22,10 +22,10 @@ $(NAME) : $(SRC)
 
 	
 bonus: $(SRCB)
-	$(CC) $(FLAGS) $(SRCB) -lmlx -framework OpenGL -framework appKit -o $(NAME)
+	$(CC) $(FLAGS) $(SRCB) -lmlx -framework OpenGL -framework appKit -o $(NAMEB)
 
 clean :
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(NAMEB)
 
 fclean : clean
 

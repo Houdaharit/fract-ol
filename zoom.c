@@ -6,7 +6,7 @@
 /*   By: hharit <hharit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 03:30:29 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/28 23:56:07 by hharit           ###   ########.fr       */
+/*   Updated: 2023/01/22 23:59:44 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,30 @@ int	hook_mouse(int button, int x, int y, t_fractol *fr)
 	if (button == 1)
 	{
 		init(fr);
-		mlx_clear_window(fr->mlx, fr->win);
+		//mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
 		ft_zoom(fr);
 		draw_set(fr);
 	}
 	if (button == 4)
 	{
 		fr->zoom = 1.0 / 2.0;
-		mlx_clear_window(fr->mlx, fr->win);
+		//mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
 		ft_zoom(fr);
 		draw_set(fr);
 	}
 	if (button == 5)
 	{
 		fr->zoom = 2.0;
-		mlx_clear_window(fr->mlx, fr->win);
+		//	mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
 		ft_zoom(fr);
 		draw_set(fr);
 	}

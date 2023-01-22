@@ -6,7 +6,7 @@
 /*   By: hharit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:17:10 by hharit            #+#    #+#             */
-/*   Updated: 2022/03/14 01:10:22 by hharit           ###   ########.fr       */
+/*   Updated: 2023/01/23 00:01:26 by hharit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@ void	move_re(t_fractol *fr, int keycode)
 	if (keycode == 124)
 	{
 		fr->move_re += fr->step;
-		mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
+
 		draw_set(fr);
 	}
 	if (keycode == 123)
 	{
 		fr->move_re -= fr->step;
-		mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
 		draw_set(fr);
 	}
 }
@@ -33,13 +38,19 @@ void	move_im(t_fractol *fr, int keycode)
 	if (keycode == 125)
 	{
 		fr->move_im += fr->step;
-		mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
+
 		draw_set(fr);
 	}
 	if (keycode == 126)
 	{
 		fr->move_im -= fr->step;
-		mlx_clear_window(fr->mlx, fr->win);
+		fr->img = mlx_new_image(fr->mlx, fr->width, fr->height);
+		fr->addr = mlx_get_data_addr(fr->img, &(fr->bits_per_pixel),
+				&(fr->line_length), &(fr->endian));
+
 		draw_set(fr);
 	}
 }
